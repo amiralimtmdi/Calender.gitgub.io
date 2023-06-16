@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon" />
+    <title>Calender</title>
+  </head>
+  <body>
+    <div class="app">
+      <!-- ========== start sideBar ========== -->
+      <div class="sidebar">
+        <div class="sidebar__profile">
+          <img src="peson.png" alt="profile" class="sidebar__profile--img" />
+          <h3 class="sidebar__profile--name">Jamse Lovelance</h3>
+        </div>
+
+        <ul class="sidebar__list">
+          <li
+            class="sidebar__list--item"
+            data-section="1"
+            style="background: #a300008a"
+          >
+            Calend
+          </li>
+          <li class="sidebar__list--item" data-section="2">To-Do</li>
+          <li class="sidebar__list--item" data-section="3">BMI</li>
+        </ul>
+      </div>
+      <!-- ============ End SideBar =========== -->
+
+      <!-- stast dispaying calender app  -->
+      <div class="sections section--1 calender">
+        <div class="calender__month-Year">
+          <div style="text-align: center">
+            <span class="prev change-year-lable">&lt</span>
+            <span class="calender__current-Year">2023</span>
+            <span class="next change-year-lable">&gt</span>
+          </div>
+
+          <ul class="calender__monthes">
+            <li>January</li>
+            <li>February</li>
+            <li>March</li>
+            <li>April</li>
+            <li>May</li>
+            <li>June</li>
+            <li>July</li>
+            <li>August</li>
+            <li>September</li>
+            <li>October</li>
+            <li>November</li>
+            <li>December</li>
+          </ul>
+        </div>
+
+        <div class="calender__Table">
+          <header>
+            <p class="calender__Table--date">Aug 18,Thu</p>
+            <p class="calender__Table--time">88:88:88</p>
+          </header>
+          <div class="calender__Table--inner">
+            <ul class="calender__Table--weeks">
+              <li>SUN</li>
+              <li>MON</li>
+              <li>TUE</li>
+              <li>WED</li>
+              <li>THU</li>
+              <li>FRI</li>
+              <li>SAT</li>
+            </ul>
+
+            <ul class="calender__Table--days">
+              <li class="selected-date"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="background-white"></div>
+      </div>
+
+      <!-- Start displaying calender app  -->
+      <div class="sections section--2 to-do-list" style="display: none">
+        <form class="to-do-list__task">
+          <input
+            type="text"
+            class="to-do-list__task--input"
+            placeholder="Write your Task here..."
+          />
+          <input type="submit" class="to-do-list__task--btn" value="Add Task" />
+        </form>
+
+        <div class="to-do-list__list">
+          <div class="to-do-list__list--item">
+            <div class="to-do-list__list--item_right">
+              <input type="checkbox" class="check-box" />
+              <p class="'hello">Doing Works...</p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              width="27px"
+              stroke="currentColor"
+              class="w-6 h-6 trash"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="trash2"
+                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              />
+            </svg>
+          </div>
+          <div class="to-do-list__list--item">
+            <div class="to-do-list__list--item_right">
+              <input type="checkbox" class="check-box" />
+              <p class="'hello">Playing Game...</p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              width="27px"
+              stroke="currentColor"
+              class="w-6 h-6 trash"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="trash2"
+                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start displaying BMI app  -->
+      <div class="sections section--3 BMI-app" style="display: none">
+        <h2>Calculate BMI</h2>
+
+        <form class="BMI-app__form">
+          <label for="weight" class="BMI-app__weight-lable lable"
+            >weight (kg) :
+          </label>
+          <input
+            type="number"
+            id="weight"
+            class="input"
+            placeholder="Like: 66 "
+            required
+          />
+
+          <label for="hight" class="BMI-app__hight-lable lable"
+            >hieght (cm) :
+          </label>
+          <input
+            type="number"
+            id="hight"
+            class="input"
+            placeholder="Like: 180 "
+            required
+          />
+
+          <input type="button" class="BMI__btn" value="Calculate" />
+        </form>
+
+        <div class="BMI-app__result">
+          <div class="BMI-app__result--WH">
+            <p class="size result-Weight">W 65kg</p>
+            <p class="size result-hieght">H 180cm</p>
+          </div>
+          <div class="BMI-app__result--result-BMI">
+            <p class="BMI-lable">bmi</p>
+            <p class="BMI-app__result--num-bmi">66</p>
+          </div>
+          <p class="BMI-app__result--lable-condition">
+            Condition : <span class="BMI-app__result--condition">Halthy</span>
+          </p>
+
+          <p class="BMI-app__result--weight-range">
+            HWR: <span class="weight-range--1">56</span> -
+            <span class="weight-range--2">77</span> Kg
+          </p>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

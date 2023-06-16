@@ -1,0 +1,577 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  bottom: -350px;
+  overflow: hidden;
+  background: #ff8c8c;
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 63vw;
+  display: flex;
+  background: #ffbaba;
+}
+
+/* ========================== SIDE BAR ====================== */
+.sidebar {
+  color: #ffff;
+  min-width: 9.5rem;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 5.2rem 1.125rem;
+  text-align: center;
+  background-color: #ff5454;
+}
+
+.sidebar__profile--img {
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__profile--name {
+  font-size: 1rem;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.sidebar__list li {
+  white-space: nowrap;
+  padding: 0.85rem 4.2rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+  background-color: #ff5454;
+}
+
+.sidebar__list li:hover {
+  transform: scale(1.1);
+}
+
+/* ==================== Calender SECTION ==================== */
+.calender {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.calender__month-Year {
+  display: flex;
+  flex-direction: column;
+  height: 26.3rem;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-left: -25px;
+}
+
+.calender__current-Year {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* change year's btn  */
+.prev,
+.next {
+  align-items: center;
+  font-weight: bolder;
+  padding: 3px;
+  cursor: pointer;
+}
+.calender__monthes {
+  display: flex;
+  flex-direction: column;
+  height: 11rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: #111;
+  text-align: center;
+  gap: 10px;
+}
+/* design scrollBar*/
+.calender__monthes::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff8c8c;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5454;
+}
+.calender__monthes li {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0rem 0 0.53rem;
+  color: #716a6aa8;
+}
+
+.calender__monthes .active {
+  font-weight: bolder;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.calender__Table {
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  text-align: center;
+  color: #ff5454;
+  font-size: 1rem;
+}
+
+.calender__Table header {
+  font-size: 1.68rem;
+  display: flex;
+  padding-left: 1.5rem;
+  gap: 1.9rem;
+  color: #111;
+}
+
+.calender__Table--inner {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.calender__Table--weeks {
+  display: flex;
+  justify-content: space-around;
+  width: 34vw;
+}
+
+.calender__Table--days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calender__Table--days li {
+  padding: 0.8rem;
+  font-weight: bolder;
+}
+
+.calender__Table--days .disable-date {
+  color: #ff8c8c;
+  font-weight: lighter;
+}
+
+.calender__Table--days .selected-date {
+  background-image: url("select-date.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  color: white;
+}
+
+.calender .background-white {
+  width: 38vw;
+  height: 50rem;
+  position: absolute;
+  background-color: #fde6e6;
+  right: 0;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: -1;
+}
+
+/* ===================== To-Do SECTION ====================== */
+.to-do-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  background-image: url("wave-haikei.png");
+  background-size: cover;
+}
+
+.to-do-list__task--input {
+  width: 30vw;
+  border: none;
+  outline: none;
+  height: 37px;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 0 22px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.to-do-list__task--btn {
+  width: 5rem;
+  height: 37px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ff8c8c;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.to-do-list__list {
+  width: 68%;
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  height: 15rem;
+  overflow-y: scroll;
+  border-radius: 1rem;
+}
+.to-do-list__list--item {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.to-do-list__list--item:nth-child(odd) {
+  background-color: #fafafa;
+}
+.to-do-list__list--item:nth-child(even) {
+  background-color: #ff8c8c;
+}
+
+.to-do-list__list::-webkit-scrollbar {
+  display: none;
+}
+.to-do-list__list--item_right {
+  display: flex;
+  gap: 11px;
+  margin-left: 21px;
+}
+.to-do-list__list--item_right input {
+  cursor: pointer;
+  width: 17px;
+}
+.to-do-list__list--item_right p {
+  font-size: 19px;
+}
+
+.to-do-list__list--item_right .disable {
+  text-decoration: line-through;
+  color: #805353;
+}
+.to-do-list__list--item .trash {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ====================== BMI SECTION ======================== */
+
+.BMI-app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-image: url("blob-scene-haikei.png");
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.BMI-app__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.input {
+  height: 2.5rem;
+  border: 1.6px solid #ff5454;
+  width: 13rem;
+  padding: 0 10px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 24px;
+  background-color: #ffe1e1;
+}
+.lable {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+#male {
+  margin-right: 19px;
+}
+.BMI__btn {
+  width: 7rem;
+  height: 2.1rem;
+  border-radius: 40px;
+  border: none;
+  background-color: #ff5454;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+/* BMI result */
+.BMI-app__result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 340px;
+  text-align: center;
+  background-color: #fafafa;
+  font-size: 21px;
+  z-index: 4;
+}
+.BMI-app__result--WH {
+  background-color: #ff5454;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  text-align: center;
+  height: 78px;
+}
+.size {
+  width: 60px;
+}
+.BMI-app__result--result-BMI {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 138px;
+  font-size: 29px;
+  border-radius: 100%;
+  background: #fde6e6;
+  margin: -37px auto;
+}
+
+.BMI-lable {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.BMI-app__result--num-bmi {
+  font-weight: bolder;
+}
+.BMI-app__result--lable-condition {
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+.overlay {
+  position: absolute;
+  width: 160%;
+  height: 159%;
+  z-index: 2;
+  left: -30%;
+  top: -27%;
+  background-color: #0000009e;
+  display: none;
+}
+
+/* responsive in 1050*/
+@media only screen and (max-width: 1050px) {
+  .app {
+    border: #ff5454 5px solid;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 30rem;
+    flex-direction: column;
+  }
+
+  /* responsive sideBar */
+  .sidebar {
+    flex-direction: revert;
+    gap: unset;
+    padding: 0.6rem 1.125rem;
+  }
+
+  .sidebar__list {
+    flex-wrap: wrap;
+    flex-direction: revert;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar__list li {
+    white-space: nowrap;
+    padding: 0.4rem 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .sidebar__profile--name {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .sidebar__profile--img {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  /* responsive calender*/
+  .calender {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0px 21px 0px;
+    background-image: url("layered-peaks-haikei.png");
+    background-size: cover3;
+  }
+  .calender__Table {
+    gap: 2rem;
+  }
+
+  .calender__Table header {
+    font-size: 1.8rem;
+    padding-left: unset;
+    gap: 1.9rem;
+  }
+
+  .calender__Table--inner {
+    gap: unset;
+    color: #111 !important;
+  }
+
+  .calender__month-Year {
+    background: #ff5454;
+    width: 120%;
+    flex-direction: row;
+    align-items: center;
+    height: 3rem;
+    margin-left: 7px;
+    margin-bottom: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b01b1b;
+  }
+
+  .calender__monthes {
+    display: none;
+  }
+
+  .calender__Table--weeks {
+    width: unset;
+    font-size: 15px;
+  }
+
+  .calender__Table--days li {
+    padding: unset;
+    margin-top: 21px;
+  }
+
+  .calender__Table--days .disable-date {
+    color: #7f7f7fc7;
+  }
+
+  .calender .background-white {
+    display: none;
+  }
+  .to-do-list {
+    margin-top: 24px;
+    gap: 2rem;
+  }
+
+  .to-do-list__list {
+    margin-bottom: 30px;
+    height: 13rem;
+    box-shadow: -8px -3px 20px 0px #a87070;
+  }
+
+  .to-do-list__task--input {
+    box-shadow: -8px -3px 20px 0px #a87070;
+    background: #ffbaba;
+  }
+  .to-do-list__task {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 10px;
+  }
+}
+
+/* responsive in 520px */
+@media only screen and (max-width: 520px) {
+  .app {
+    width: 90%;
+  }
+
+  .calender__Table header {
+    font-size: 1.4rem;
+  }
+
+  .to-do-list__list {
+    width: 90%;
+  }
+  .to-do-list__task--input {
+    width: 45vw;
+    box-shadow: -8px -3px 20px 0px #a87070;
+  }
+  .to-do-list__task--input::placeholder {
+    color: #603434;
+    font-size: 13px;
+    text-align: left;
+  }
+  .to-do-list__list--item_right p {
+    font-size: 17px;
+    margin-right: 5px;
+  }
+  .to-do-list__task--input {
+    font-size: 17px;
+  }
+  .to-do-list__task--btn {
+    font-size: 13px;
+  }
+  .BMI-app__result {
+    width: 262px;
+    height: 290px;
+    font-size: 19px;
+  }
+  .BMI-app__result--result-BMI {
+    width: 116px;
+    height: 111px;
+    font-size: 25px;
+  }
+}
